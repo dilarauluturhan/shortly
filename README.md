@@ -1,5 +1,5 @@
 <div align="center">
-  <h1 align="center">Shortly URL Shortening API</h1>
+  <h1 align="center">Shortly - URL Shortening API</h1>
 </div>
 
 ## About The Project

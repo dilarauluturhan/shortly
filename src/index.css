@@ -22,6 +22,27 @@ p {
     line-height: 1.6;
 }
 
-.max-width{
+.max-width {
     @apply px-5 lg:max-w-5xl lg:mx-auto xl:max-w-6xl 2xl:px-0;
+}
+
+.boost {
+    background-color: hsl(257, 27%, 26%);
+    height: 17.188rem;
+}
+
+.boost img {
+    height: 17.188rem;
+    @apply w-full;
+}
+
+.boost .boost-inner {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.btn-cta {
+    @apply bg-cyan-500 py-2 px-4 text-white hover:opacity-75 transition-all duration-150;
 }
