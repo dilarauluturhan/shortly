@@ -9,6 +9,10 @@ body {
     font-size: 18px;
 }
 
+h1 {
+    line-height: 1.2 !important;
+}
+
 img {
     max-width: 100%;
 }
