@@ -17,7 +17,7 @@ export default function Header() {
         <div>
           <ul>
             <li><button>Login</button></li>
-            <li><button className='btn-cta'>Sign Up</button></li>
+            <li><button className='btn-cta rounded-full'>Sign Up</button></li>
           </ul>
         </div>
       </header>
