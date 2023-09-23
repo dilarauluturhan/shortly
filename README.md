@@ -6,16 +6,24 @@
 ![](https://github.com/dilarauluturhan/shortly/assets/120499369/32ac4250-11c8-4163-8902-5cefd56b8e5f)
 
 ## Features
-**Shortly** is a web application that helps you shorten your URLs.
+**Shortly** is a modern link shortener application that allows users to shorten their links and track their performance with advanced statistics.
+- **Link Shortening**: Quickly shorten any link.
+- **Responsive Design**: Optimized for both desktop and mobile views.
+- **Interactive UI**: Modern and interactive user interface with smooth transitions.
 
 ## Built With
-Used React.js, React Icons and Tailwind CSS technologies for this project.
+- **React**: For building the user interface.
+- **React Icons**: For displaying various icons throughout the application.
+- **Tailwind CSS**: For styling the application.
+- **Local Storage**: For storing shortened links.
 
-## Installation
+## Getting Started
+To get the project up and running on your local machine, follow these steps:
+
+Clone the repository:
 ````
 git clone https://github.com/dilarauluturhan/shortly.git
 ````
-## Usage
 Go to the project directory:
 ````
 cd shortly
