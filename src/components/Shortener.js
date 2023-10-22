@@ -15,28 +15,51 @@ const getLocalStorage = () => {
 export default function Shortener() {
   const [text, setText] = useState('');
   const [links, setLinks] = useState(getLocalStorage());
-  const [buttonText, setButtonText] = useState('Copy')
+  const [buttonText, setButtonText] = useState('Copy');
 
-  const handleSubmit = (e) => {
-    e.preventDefault()
+  const bitlyAccessToken = process.env.ACCESS_TOKEN;
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
 
     if (!text) {
-      alert("Input is empty")
+      alert("Input is empty");
     } else {
-      const shortLink = async () => {
-        const res = await fetch(`https://api.shrtco.de/v2/shorten?url=${text}`)
-        const data = await res.json()
-        setLinks(data.result)
-        setText('')
-      }
+      try {
+        const response = await fetch(`https://api-ssl.bitly.com/v4/shorten`, {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+            'Authorization': `Bearer ${bitlyAccessToken}`
+          },
+          body: JSON.stringify({ long_url: text })
+        });
 
-      shortLink()
+        console.log(response);
+
+        if (response.ok) {
+          const data = await response.json();
+          setLinks([
+            ...links,
+            {
+              original_link: text,
+              full_short_link: data.link,
+            },
+          ]);
+          setText('');
+        } else {
+          alert('Link shortening failed. Please try again later.');
+        }
+      } catch (error) {
+        console.log(error);
+        alert('Link shortening failed. Please try again later.');
+      }
     }
   };
 
   const handleCopy = () => {
     navigator.clipboard.writeText(links.full_short_link);
-    setButtonText('Copied!')
+    setButtonText('Copied!');
   };
 
   useEffect(() => {
